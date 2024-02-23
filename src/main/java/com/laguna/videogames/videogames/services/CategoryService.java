@@ -15,13 +15,13 @@ public interface CategoryService {
 
     Category save(Category category);
 
-    List<Category> findCategoriesByCategoryName(String categoryName);
+    List<Category> findCategoriesByCategoryName(String category_name);
 
     void deleteById(Long id);
 
     Category update(Long id, Category model);
 
-    List<Game> getProductsByCategoryId(Long id);
+    List<Game> getGamesByCategoryId(Long id);
 
-    Integer countProductsChecked(Long categoryId);
+    Integer countGamesChecked(Long categoryId);
 }

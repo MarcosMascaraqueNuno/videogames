@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 public class CategoryRequestDto {
-    private String category_name;
+    private String categoryName;
     private Boolean multiplayer;
 }

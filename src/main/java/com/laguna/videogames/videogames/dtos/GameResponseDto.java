@@ -14,7 +14,7 @@ import java.util.UUID;
 public class GameResponseDto {
     private Long Id;
     private UUID uuid;
-    private String tittle;
+    private String title;
     private String platform;
     private Date launch;
     private Integer rating;

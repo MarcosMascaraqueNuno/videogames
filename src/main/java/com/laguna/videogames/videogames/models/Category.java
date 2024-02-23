@@ -17,7 +17,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private UUID uuid;
-    private String category_name;
+    private String categoryName;
     public Boolean multiplayer;
     @OneToMany
     private List<Game> game;

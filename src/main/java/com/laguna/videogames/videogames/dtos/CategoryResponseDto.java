@@ -15,7 +15,7 @@ import java.util.UUID;
 public class CategoryResponseDto {
     private Long id;
     private UUID uuid;
-    private String category_name;
+    private String categoryName;
     private Boolean multiplayer;
     private List<Game> game;
 }

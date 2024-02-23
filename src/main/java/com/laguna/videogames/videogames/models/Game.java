@@ -17,12 +17,13 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private UUID uuid;
-    private String tittle;
+    private String title;
     private String platform;
     private Date launch;
     private Integer rating;
     private String description;
     private Double price;
+    private Integer categoryId;
     @ManyToOne
     private Category category;
 }
