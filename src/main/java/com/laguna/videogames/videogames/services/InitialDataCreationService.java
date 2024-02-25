@@ -2,6 +2,7 @@ package com.laguna.videogames.videogames.services;
 
 import com.laguna.videogames.videogames.models.Category;
 import com.laguna.videogames.videogames.models.Game;
+import com.laguna.videogames.videogames.models.User;
 import lombok.RequiredArgsConstructor;
 import net.datafaker.Faker;
 import org.springframework.stereotype.Service;
@@ -18,11 +19,14 @@ public class InitialDataCreationService {
 
     private final CategoryService categoryService;
     private final GameService gameService;
+    private final UserDetailsServiceImpl userDetailsService;
 
     private final Faker faker = new Faker(new Locale("en-US"));
 
-
-
+    public void createDefaultAdminUser() {
+        User user = new User("user", "$2a$12$K4tojeaYWMK55KzWzDWtLOuuUjRTkycWhSGHYWA2LXMZqmZUtuXPO"); // Esto es "password" codificado con bcrypt)
+        userDetailsService.save(user);
+    }
 
     public void createFakeGames(int number) {
         if(number <= 0) return;

@@ -12,6 +12,7 @@ public class VideogamesApplication {
 	@Bean
 	public CommandLineRunner init(InitialDataCreationService service) {
 		return args -> {
+			service.createDefaultAdminUser();
 			service.createFakeCategories(10);
 			service.createFakeGames(40);
 		};
