@@ -66,12 +66,6 @@ public class CategoryServiceImpl implements CategoryService {
         return null; // Devolver nulo si no se encuentra la categoría a actualizar
     }
 
-    @Override
-    public List<Game> getGamesByCategoryId(Long id) {
-        // Implementa la lógica para obtener los juegos asociados a una categoría específica
-        // Puedes hacer esto utilizando el repositorio de juegos o mediante relaciones en la entidad Category
-        return null;
-    }
 
     @Override
     public Integer countGamesChecked(Long categoryId) {

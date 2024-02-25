@@ -66,7 +66,7 @@ public class GameController {
                 gameRequestDto.getRating(),
                 gameRequestDto.getDescription(),
                 gameRequestDto.getPrice(),
-                null  // category: Puede necesitar ajustes según cómo manejes las categorías
+                gameRequestDto.getCategoryId()  // category: Puede necesitar ajustes según cómo manejes las categorías
         );
     }
 }

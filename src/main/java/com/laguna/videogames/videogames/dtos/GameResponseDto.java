@@ -18,5 +18,5 @@ public class GameResponseDto {
     private Integer rating;
     private String description;
     private Double price;
-    private Category category;
+    private Long categoryId;
 }

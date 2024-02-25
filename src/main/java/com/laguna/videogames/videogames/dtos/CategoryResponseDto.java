@@ -17,6 +17,5 @@ public class CategoryResponseDto {
     private UUID uuid;
     private String categoryName;
     private Boolean multiplayer;
-    private List<Game> game;
 }
 

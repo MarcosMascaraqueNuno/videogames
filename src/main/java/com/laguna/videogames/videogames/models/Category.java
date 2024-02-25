@@ -21,8 +21,5 @@ public class Category {
     private String categoryName;
     public Boolean multiplayer;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "category")
-    private List<Game> games;
 
 }

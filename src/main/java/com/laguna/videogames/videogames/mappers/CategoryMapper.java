@@ -15,8 +15,7 @@ public class CategoryMapper {
                 category.getId(),
                 category.getUuid(),
                 category.getCategoryName(),
-                category.getMultiplayer(),
-                category.getGames()
+                category.getMultiplayer()
         );
     }
 
@@ -31,15 +30,13 @@ public class CategoryMapper {
                 0L,
                 UUID.randomUUID(),
                 categoryRequestDto.getCategoryName(),
-                categoryRequestDto.getMultiplayer(),
-                null
+                categoryRequestDto.getMultiplayer()
         );
     }
 
     public Category toModelfromRequestDto(Long categoryId) {
         return new Category(
                 categoryId,
-                null,
                 null,
                 null,
                 null

@@ -26,6 +26,7 @@ dependencies {
 	//implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'mysql:mysql-connector-java:8.0.23'
+	implementation "net.datafaker:datafaker:2.1.0" //JavaFaker
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor "org.projectlombok:lombok"
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

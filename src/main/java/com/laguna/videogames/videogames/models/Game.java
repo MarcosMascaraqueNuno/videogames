@@ -25,8 +25,6 @@ public class Game {
     private Integer rating;
     private String description;
     private Double price;
-    @ManyToOne
     @JoinColumn(name = "category_id")
-    @JsonIgnore //Añadido para que salgan games en postman
-    private Category category;
+    private Long categoryId;
 }

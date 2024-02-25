@@ -21,7 +21,6 @@ public interface CategoryService {
 
     Category update(Long id, Category model);
 
-    List<Game> getGamesByCategoryId(Long id);
 
     Integer countGamesChecked(Long categoryId);
 }

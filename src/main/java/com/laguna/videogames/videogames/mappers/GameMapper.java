@@ -28,7 +28,7 @@ public class GameMapper {
                 game.getRating(),
                 game.getDescription(),
                 game.getPrice(),
-                game.getCategory()
+                game.getCategoryId()
         );
     }
 
@@ -48,8 +48,7 @@ public class GameMapper {
                 gameRequestDto.getRating(),
                 gameRequestDto.getDescription(),
                 gameRequestDto.getPrice(),
-                gameRequestDto.getCategoryId() != null ?
-                        categoryMapper.toModelfromRequestDto(gameRequestDto.getCategoryId()) : null
+                gameRequestDto.getCategoryId()
         );
     }
 }

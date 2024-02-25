@@ -52,7 +52,7 @@ public class GameServiceImpl implements GameService {
             // Actualizar los campos relevantes del juego existente con la información del juego actualizado
             existingGame.setTitle(updatedGame.getTitle());
             existingGame.setDescription(updatedGame.getDescription());
-            existingGame.setCategory(updatedGame.getCategory());
+            existingGame.setCategoryId(updatedGame.getCategoryId());
             // Actualiza otros campos según sea necesario
 
             // Guardar la entidad actualizada
