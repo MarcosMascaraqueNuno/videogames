@@ -19,7 +19,7 @@ public class Category {
     private UUID uuid;
     private String categoryName;
     public Boolean multiplayer;
-    @OneToMany
-    private List<Game> game;
+    @OneToMany(mappedBy = "category")
+    private List<Game> games;
 
 }

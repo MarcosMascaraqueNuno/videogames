@@ -16,7 +16,7 @@ public class CategoryMapper {
                 category.getUuid(),
                 category.getCategoryName(),
                 category.getMultiplayer(),
-                category.getGame()
+                category.getGames()
         );
     }
 
