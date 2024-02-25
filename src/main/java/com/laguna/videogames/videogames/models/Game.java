@@ -1,5 +1,6 @@
 package com.laguna.videogames.videogames.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,5 +27,6 @@ public class Game {
     private Double price;
     @ManyToOne
     @JoinColumn(name = "category_id")
+    @JsonIgnore //Añadido para que salgan games en postman
     private Category category;
 }
