@@ -4,15 +4,13 @@ import com.laguna.videogames.videogames.models.Category;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.time.LocalDateTime;
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 
 @Data
 @AllArgsConstructor
 public class GameResponseDto {
-    private Long Id;
+    private final Long Id;
     private UUID uuid;
     private String title;
     private String platform;

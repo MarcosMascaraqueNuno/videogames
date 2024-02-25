@@ -23,7 +23,6 @@ public class Game {
     private Integer rating;
     private String description;
     private Double price;
-    private Integer categoryId;
     @ManyToOne
     private Category category;
 }
