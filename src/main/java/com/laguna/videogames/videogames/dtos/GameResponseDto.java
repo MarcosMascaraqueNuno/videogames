@@ -10,7 +10,7 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 public class GameResponseDto {
-    private final Long Id;
+    private Long Id;
     private UUID uuid;
     private String title;
     private String platform;

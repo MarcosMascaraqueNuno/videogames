@@ -3,56 +3,26 @@ package com.laguna.videogames.videogames.services;
 import com.laguna.videogames.videogames.models.Category;
 import com.laguna.videogames.videogames.models.Game;
 import com.laguna.videogames.videogames.repositories.CategoryRepository;
-import com.laguna.videogames.videogames.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
 
     private final CategoryRepository categoryRepository;
-    private final GameRepository gameRepository;
 
     @Autowired
-    public CategoryServiceImpl(CategoryRepository categoryRepository, GameRepository gameRepository) {
+    public CategoryServiceImpl(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
-        this.gameRepository = gameRepository;
     }
 
     @Override
     public List<Category> findAll() {
         return categoryRepository.findAll();
-    }
-
-    @Override
-    public List<Game> getGamesByCategoryId(Long id) {
-        Category category = this.findById(id);
-
-        if (category != null) {
-            return gameRepository.findGamesByCategoryId(id);
-        } else {
-            return Collections.emptyList();
-        }
-    }
-
-    @Override
-    public Integer countGamesChecked(Long categoryId) {
-        List<Game> checkedGamesList = new ArrayList<>();
-
-        List<Game> gamesChecked = gameRepository.findGamesByToCheck(true);
-
-        for (Game game : gamesChecked) {
-            if (categoryId.equals(game.getCategoryId())) {
-                checkedGamesList.add(game);
-            }
-        }
-
-        return checkedGamesList.size();
     }
 
     @Override
@@ -71,8 +41,8 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public List<Category> findCategoriesByCategoryName(String category_name) {
-        return categoryRepository.findCategoriesByCategoryName(category_name);
+    public List<Category> findCategoriesByCategoryName(String categoryName) {
+        return categoryRepository.findCategoriesByCategoryName(categoryName);
     }
 
     @Override
@@ -81,15 +51,32 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public Category update(Long id, Category model) {
+    public Category update(Long id, Category updatedCategory) {
         Category existingCategory = categoryRepository.findById(id).orElse(null);
-        if (existingCategory != null) {
-            existingCategory.setCategoryName(model.getCategoryName());
-            existingCategory.setMultiplayer(model.getMultiplayer());
-            // Puedes actualizar otros campos si es necesario
 
+        if (existingCategory != null) {
+            // Actualizar los campos relevantes de la categoría existente con la información de la categoría actualizada
+            existingCategory.setCategoryName(updatedCategory.getCategoryName());
+            // Actualizar otros campos según sea necesario
+
+            // Guardar la entidad actualizada
             return categoryRepository.save(existingCategory);
         }
+
+        return null; // Devolver nulo si no se encuentra la categoría a actualizar
+    }
+
+    @Override
+    public List<Game> getGamesByCategoryId(Long id) {
+        // Implementa la lógica para obtener los juegos asociados a una categoría específica
+        // Puedes hacer esto utilizando el repositorio de juegos o mediante relaciones en la entidad Category
+        return null;
+    }
+
+    @Override
+    public Integer countGamesChecked(Long categoryId) {
+        // Implementa la lógica para contar los juegos marcados como "checked" en una categoría específica
+        // Esto podría requerir el uso de tu repositorio de juegos y la relación con la categoría
         return null;
     }
 }

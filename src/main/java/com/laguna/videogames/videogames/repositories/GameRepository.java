@@ -9,6 +9,8 @@ import java.util.UUID;
 
 public interface GameRepository extends JpaRepository<Game, Long> {
     Optional<Game> findGameByUuid(UUID uuid);
-    List<Game> findGamesByCategoryId(Long categoryId);
-    List<Game> findGamesByToCheck(Boolean toCheck);
+//    List<Game> findGamesByCategoryId(Long categoryId);
+//    List<Game> findGamesByToCheck(Boolean toCheck);
+
+    List<Game> findGamesByTitleContainsIgnoreCase(String title);
 }

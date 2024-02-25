@@ -10,11 +10,11 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 public class GameRequestDto {
-    private final String title;
+    private String title;
     private String platform;
     private Date launch;
     private Integer rating;
     private String description;
     private Double price;
-    private final Long categoryId;
+    private Long categoryId;
 }

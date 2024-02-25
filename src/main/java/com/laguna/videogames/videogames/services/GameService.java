@@ -17,6 +17,8 @@ public interface GameService {
     void deleteById(Long id);
 
     Game update(Long id, Game model);
+    List<Game> findGamesByTitle(String Title);
 
-    List<Game> findByCategory(Long categoryId);
+
+
 }
