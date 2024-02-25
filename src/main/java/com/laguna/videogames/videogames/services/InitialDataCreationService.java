@@ -7,6 +7,7 @@ import net.datafaker.Faker;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 import java.util.UUID;
@@ -25,7 +26,12 @@ public class InitialDataCreationService {
 
     public void createFakeGames(int number) {
         if(number <= 0) return;
+
+        List<Category> allCategories = categoryService.getAllCategories(); // Obtén todas las categorías existentes
+
         for (int i = 0; i < number; i++) {
+            Category randomCategory = getRandomCategory(allCategories);
+
             Game game = new Game(
                     null,
                     UUID.randomUUID(),
@@ -34,11 +40,23 @@ public class InitialDataCreationService {
                     faker.date().birthday(),
                     faker.number().numberBetween(1, 100),
                     generateRamdomDescription(),
-                    faker.number().randomDouble(2, 10 ,100),
-                    null
+                    faker.number().randomDouble(2, 10, 100),
+                    randomCategory.getId() // Usa la ID de la categoría en lugar de null
             );
             gameService.save(game);
         }
+    }
+
+    // Método para obtener una categoría aleatoria de la lista de categorías
+    private Category getRandomCategory(List<Category> categories) {
+        if (categories.isEmpty()) {
+            // Manejar el caso en que no hay categorías disponibles
+            return null; // o puedes lanzar una excepción, según tus necesidades
+        }
+
+        Random random = new Random();
+        int randomIndex = random.nextInt(categories.size());
+        return categories.get(randomIndex);
     }
 
     public void createFakeCategories(int number) {

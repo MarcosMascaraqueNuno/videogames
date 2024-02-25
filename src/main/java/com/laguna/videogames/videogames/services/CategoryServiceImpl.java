@@ -73,4 +73,9 @@ public class CategoryServiceImpl implements CategoryService {
         // Esto podría requerir el uso de tu repositorio de juegos y la relación con la categoría
         return null;
     }
+
+    @Override
+    public List<Category> getAllCategories() {
+        return categoryRepository.findAll();
+    }
 }

@@ -23,4 +23,6 @@ public interface CategoryService {
 
 
     Integer countGamesChecked(Long categoryId);
+
+    List<Category> getAllCategories();
 }
