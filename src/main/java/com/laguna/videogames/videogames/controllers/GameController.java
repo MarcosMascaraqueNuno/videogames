@@ -1,14 +1,20 @@
 package com.laguna.videogames.videogames.controllers;
 
 import com.laguna.videogames.videogames.dtos.GameRequestDto;
+import com.laguna.videogames.videogames.dtos.GameResponseDto;
+import com.laguna.videogames.videogames.mappers.GameMapper;  // Asegúrate de tener la importación correcta
+
 import com.laguna.videogames.videogames.models.Game;
 import com.laguna.videogames.videogames.services.GameService;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @RestController
@@ -16,10 +22,12 @@ import java.util.UUID;
 public class GameController {
 
     private final GameService gameService;
+    private final GameMapper gameMapper;
 
     @Autowired
-    public GameController(GameService gameService) {
+    public GameController(GameService gameService, GameMapper gameMapper) {
         this.gameService = gameService;
+        this.gameMapper = gameMapper;
     }
 
     @GetMapping
@@ -56,17 +64,41 @@ public class GameController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+    @PatchMapping("/patch/{id}")
+    public ResponseEntity<GameResponseDto> patchGame(
+            @PathVariable Long id,
+            @RequestBody GameRequestDto gameRequestDto
+    ) {
+        Map<String, Object> updates = convertDtoToMap(gameRequestDto);
+        Game gamePatched = gameService.patch(id, updates);
+
+        return ResponseEntity.ok(gameMapper.toResponse(gamePatched));
+    }
+
+    private Map<String, Object> convertDtoToMap(GameRequestDto gameRequestDto) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("title", gameRequestDto.getTitle());
+        map.put("platform", gameRequestDto.getPlatform());
+        map.put("launch", gameRequestDto.getLaunch());
+        map.put("rating", gameRequestDto.getRating());
+        map.put("description", gameRequestDto.getDescription());
+        map.put("price", gameRequestDto.getPrice());
+        map.put("categoryId", gameRequestDto.getCategoryId());
+        return map;
+    }
+
+
     private Game convertDtoToGame(GameRequestDto gameRequestDto) {
         return new Game(
-                null,  // id: Será generado automáticamente por la base de datos
-                UUID.randomUUID(),  // uuid: Generamos uno nuevo
+                null,
+                UUID.randomUUID(),
                 gameRequestDto.getTitle(),
                 gameRequestDto.getPlatform(),
                 gameRequestDto.getLaunch(),
                 gameRequestDto.getRating(),
                 gameRequestDto.getDescription(),
                 gameRequestDto.getPrice(),
-                gameRequestDto.getCategoryId()  // category: Puede necesitar ajustes según cómo manejes las categorías
+                gameRequestDto.getCategoryId()
         );
     }
 }

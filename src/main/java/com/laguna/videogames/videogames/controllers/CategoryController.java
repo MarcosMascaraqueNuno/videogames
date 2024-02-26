@@ -42,13 +42,6 @@ public class CategoryController {
                 new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-   // @PostMapping("/create")
-   // public ResponseEntity<CategoryResponseDto> createCategory(@RequestBody CategoryRequestDto categoryRequestDto) {
-   // Category newCategory = categoryService.save(categoryMapper.toModel(categoryRequestDto));
-    //  CategoryResponseDto responseDto = categoryMapper.toResponse(newCategory);
-    //   return new ResponseEntity<>(responseDto, HttpStatus.CREATED);
-    //  }
-
     @PostMapping("/create")
     public ResponseEntity<CategoryResponseDto> createCategory(
             @RequestBody CategoryRequestDto categoryRequestDto

@@ -3,6 +3,7 @@ package com.laguna.videogames.videogames.services;
 import com.laguna.videogames.videogames.models.Game;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 public interface GameService {
@@ -19,6 +20,6 @@ public interface GameService {
     Game update(Long id, Game model);
     List<Game> findGamesByTitle(String Title);
 
-
+    Game patch(Long id, Map<String, Object> updates);
 
 }

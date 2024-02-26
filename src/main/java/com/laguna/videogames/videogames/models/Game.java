@@ -18,6 +18,7 @@ public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private UUID uuid;
     private String title;
     private String platform;
@@ -25,6 +26,7 @@ public class Game {
     private Integer rating;
     private String description;
     private Double price;
-    @JoinColumn(name = "category_id")
+
+    @Column(name = "category_id")
     private Long categoryId;
 }

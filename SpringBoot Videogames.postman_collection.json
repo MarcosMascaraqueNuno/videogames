@@ -1,0 +1,494 @@
+{
+	"info": {
+		"_postman_id": "90b511c1-bd0d-42c8-a901-7e69adea2e50",
+		"name": "SpringBoot Videogames",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30973322"
+	},
+	"item": [
+		{
+			"name": "CATEGORIES",
+			"item": [
+				{
+					"name": "GET CATEGORIES",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ2aWRlb2dhbWVzIiwic3ViIjoidXNlciIsImV4cCI6MTcwODk3ODgyMn0.6Kmwy8rmU7ijkh3NvuCYNJ6f2T0Byqx_yMF76ZbOylQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET CATEGORIES BY ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ2aWRlb2dhbWVzIiwic3ViIjoidXNlciIsImV4cCI6MTcwODk3ODgyMn0.6Kmwy8rmU7ijkh3NvuCYNJ6f2T0Byqx_yMF76ZbOylQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/categories/id/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categories",
+								"id",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE CATEGORY BY ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ2aWRlb2dhbWVzIiwic3ViIjoidXNlciIsImV4cCI6MTcwODk3ODgyMn0.6Kmwy8rmU7ijkh3NvuCYNJ6f2T0Byqx_yMF76ZbOylQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"uuid\": \"31c1d011-c852-432c-add9-83f5c3e1ed5f\",\r\n        \"categoryName\": \"Sportsssssssssssssssssssssssssssss\",\r\n        \"multiplayer\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/categories/update/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categories",
+								"update",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE CATEGORY BY ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ2aWRlb2dhbWVzIiwic3ViIjoidXNlciIsImV4cCI6MTcwODk3ODgyMn0.6Kmwy8rmU7ijkh3NvuCYNJ6f2T0Byqx_yMF76ZbOylQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"uuid\": \"31c1d011-c852-432c-add9-83f5c3e1ed5f\",\r\n        \"categoryName\": \"Sportsssssssssssssssssssssssssssss\",\r\n        \"multiplayer\": true\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/categories/delete/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categories",
+								"delete",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE CATEGORIES",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ2aWRlb2dhbWVzIiwic3ViIjoidXNlciIsImV4cCI6MTcwODk3ODgyMn0.6Kmwy8rmU7ijkh3NvuCYNJ6f2T0Byqx_yMF76ZbOylQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uuid\": \"31c1d011-c852-432c-add9-83f5c3e1ed5f\",\r\n    \"categoryName\": \"SPORTSSSSSSSS\",\r\n    \"multiplayer\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/categories/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categories",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GAMES",
+			"item": [
+				{
+					"name": "GET GAMES",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ2aWRlb2dhbWVzIiwic3ViIjoidXNlciIsImV4cCI6MTcwODk3ODgyMn0.6Kmwy8rmU7ijkh3NvuCYNJ6f2T0Byqx_yMF76ZbOylQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/games",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"games"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET GAMES BY ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ2aWRlb2dhbWVzIiwic3ViIjoidXNlciIsImV4cCI6MTcwODk3ODgyMn0.6Kmwy8rmU7ijkh3NvuCYNJ6f2T0Byqx_yMF76ZbOylQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/games/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"games",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE GAME BY ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ2aWRlb2dhbWVzIiwic3ViIjoidXNlciIsImV4cCI6MTcwODk3ODgyMn0.6Kmwy8rmU7ijkh3NvuCYNJ6f2T0Byqx_yMF76ZbOylQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uuid\": \"fef8329c-b867-4489-9a12-5f098929d1e9\",\r\n    \"title\": \"PlayerUnknown's Battlegrounds\",\r\n    \"platform\": \"Super Nintendo Entertainment System\",\r\n    \"launch\": \"1981-03-31T07:19:09.938+00:00\",\r\n    \"rating\": 42,\r\n    \"description\": \"Juego de tiros de la SNES.\",\r\n    \"price\": 59.79,\r\n    \"categoryId\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/games/update/41",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"games",
+								"update",
+								"41"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE GAME BY ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ2aWRlb2dhbWVzIiwic3ViIjoidXNlciIsImV4cCI6MTcwODk3ODgyMn0.6Kmwy8rmU7ijkh3NvuCYNJ6f2T0Byqx_yMF76ZbOylQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"uuid\": \"fef8329c-b867-4489-9a12-5f098929d1e9\",\r\n    \"title\": \"PlayerUnknown's Battlegrounds\",\r\n    \"platform\": \"Super Nintendo Entertainment System\",\r\n    \"launch\": \"1981-03-31T07:19:09.938+00:00\",\r\n    \"rating\": 42,\r\n    \"description\": \"Juego de tiros de la SNES.\",\r\n    \"price\": 59.79,\r\n    \"categoryId\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/games/delete/41",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"games",
+								"delete",
+								"41"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE GAME",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ2aWRlb2dhbWVzIiwic3ViIjoidXNlciIsImV4cCI6MTcwODk3ODgyMn0.6Kmwy8rmU7ijkh3NvuCYNJ6f2T0Byqx_yMF76ZbOylQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"uuid\": \"fef8329c-b867-4489-9a12-5f098929d1e9\",\r\n        \"title\": \"PlayerUnknown's Battlegrounds\",\r\n        \"platform\": \"Super Nintendo Entertainment System\",\r\n        \"launch\": \"1981-03-31T07:19:09.938+00:00\",\r\n        \"rating\": 42,\r\n        \"description\": \"Descubre secretos oscuros, desentraña conspiraciones y lucha contra fuerzas paranormales aterradoras.\",\r\n        \"price\": 59.79,\r\n        \"categoryId\": 6\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/games/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"games",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH GAME",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ2aWRlb2dhbWVzIiwic3ViIjoidXNlciIsImV4cCI6MTcwOTA1MzQwOH0.yGovT0g1xLLLw6QPGSuoTWPrH45QxQ3cACLDbFzfb3Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  { \"op\": \"replace\", \"path\": \"/title\", \"value\": \"Nuevo Título\" },\r\n  { \"op\": \"replace\", \"path\": \"/description\", \"value\": \"Nueva Descripción del Juego\" }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/games/update/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"games",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "SIGN UP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user\", \r\n    \"password\": \"password\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
